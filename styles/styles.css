@@ -1,0 +1,1215 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #1c1c1e;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+h1, h2, h3{
+    margin-bottom: 15px;
+    color: #ffce00;
+    font-size: 35px;
+}
+
+span {
+    color: #ffc107;
+    position: relative;
+    font-weight: bold;
+}
+
+span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 0;
+    background: #ffc107;
+    transition: width 0.3s ease;
+}
+
+span:hover::after {
+    width: 100%;
+}
+
+
+p {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+/* Navbar */
+nav {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    padding: 0.8em 2em;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 1em;
+    position: relative;
+}
+
+.navbar a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1em;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #D69E2E;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.navbar a:hover {
+    color: #D69E2E;
+}
+
+
+/* Bot Profile Section */
+#profile {
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+    padding: 150px 20px 230px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bot-profile-container {
+    position: relative;
+    z-index: 1;
+}
+
+.bot-profile {
+    background: linear-gradient(145deg, rgba(0, 255, 255, 0.2), rgba(0, 0, 0, 0.5));
+    padding: 50px;
+    border-radius: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.bot-profile::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.2), transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.bot-profile img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    border: 6px solid transparent;
+    background: linear-gradient(145deg, rgba(255, 230, 0, 0.5), rgba(0, 255, 255, 0.5));
+    box-shadow: 0 0 15px rgba(255, 251, 0, 0.6), 0 0 25px rgba(0, 255, 170, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255, 255, 0, 0.6), 0 0 25px rgba(0, 255, 255, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(255, 255, 0, 0.8), 0 0 35px rgba(0, 255, 255, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255, 255, 0, 0.6), 0 0 25px rgba(0, 255, 255, 0.4);
+    }
+}
+
+
+.bot-profile h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.bot-profile p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #ddd;
+    position: relative;
+    z-index: 1;
+}
+
+/* Button Styles */
+.bot-profile .buttons button {
+    background: linear-gradient(145deg, #ffce00, #ffc107);
+    color: #202225;
+    border: none;
+    padding: 12px 30px;
+    margin: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bot-profile .buttons button:hover {
+    background: linear-gradient(145deg, #ffc107, #ffce00);
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: Add a glowing effect around the button */
+.bot-profile .buttons button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    z-index: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.bot-profile .buttons button:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* About Section */
+#about {
+    background-color: #1c1c1e;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Decorations */
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 206, 0, 0.2), rgba(0, 188, 212, 0.2));
+    z-index: 0;
+    opacity: 0.3;
+    pointer-events: none;
+    transform: rotate(-15deg);
+}
+
+/* Container */
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* About Text Styling */
+.about-text {
+    flex: 1;
+    color: #e0e0e0;
+    padding: 20px;
+    background-color: #2f3136;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 1s ease-in-out;
+}
+
+.about-text::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #ffce00, #00bcd4);
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.3;
+    transform: rotate(-30deg);
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffce00;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+}
+
+.about-text ul {
+    margin-top: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about-text ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Discord Embed Styling */
+.discord-embed {
+    flex: 1;
+    text-align: center;
+    background: #2f3136;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.discord-embed::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ffce00, #00bcd4);
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.3;
+    transform: rotate(45deg);
+}
+
+.discord-embed iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* Enhanced Button Styling */
+.about-container .button-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.about-container .button-wrapper button {
+    background: linear-gradient(135deg, #ffce00, #00bcd4);
+    color: #202225;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.about-container .button-wrapper button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 20%, transparent 40%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: transform 0.4s;
+}
+
+.about-container .button-wrapper button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.about-container .button-wrapper button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about {
+        padding: 50px 10px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .about-text, .discord-embed {
+        flex: none;
+        width: 100%;
+    }
+
+    .about-text ul {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .button-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Features Section */
+#features {
+    background: linear-gradient(135deg, #292b2f, #1c1c1e);
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Decorations */
+#features::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 193, 7, 0.05), transparent 70%);
+    z-index: 0;
+    opacity: 0.5;
+}
+
+/* Title Styling */
+#features h2 {
+    font-size: 3rem;
+    color: #ffce00;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Features Grid Styling */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Feature Box Styling */
+.feature-box {
+    background-color: #202225;
+    padding: 100px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border 0.3s;
+    position: relative;
+    overflow: hidden;
+    animation: scaleIn 0.6s ease-in-out;
+}
+
+/* Inner Glow Effect */
+.feature-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 80%);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.feature-box:hover::before {
+    opacity: 0.3;
+}
+
+/* Option 1: Simple Gradient Border */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: #333;
+    font-size: 1.5em;
+    border: 3px solid transparent;
+    background: linear-gradient(white, white) padding-box, linear-gradient(145deg, #ffce00, #ffce00) border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Option 2: Solid Color with Shadow */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.5em;
+    background-color: #ffce00;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Option 3: Outline and Hover Effect */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    color: #ffce00;
+    font-size: 1.6em;
+    border: 2px solid #ffce00;
+    background-color: transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.feature-box h3:hover {
+    color: #fff;
+    border-color: #ffce00;
+    background-color: #ffce00;
+}
+
+/* Option 4: Underline with Gradient */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px;
+    color: #ffce00;
+    font-size: 1.6em;
+    text-decoration: underline;
+    text-decoration-color: #ffce00;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Option 5: Minimalist with Font Change */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px;
+    color: #333;
+    font-size: 1.5em;
+    font-family: 'Arial', sans-serif;
+    border-bottom: 2px solid #ffce00;
+    background: transparent;
+}
+
+/* Option 6: 3D Effect */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.6em;
+    background-color: #ffce00;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transform: perspective(500px) rotateX(10deg);
+}
+
+/* Option 7: Dual Shadow and Hover */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.5em;
+    background-color: #ffce00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.feature-box h3:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Option 8: Inset Shadow */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.5em;
+    background-color: #ffce00;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Option 9: Text Gradient */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 1.5em;
+    color: transparent;
+    background: linear-gradient(145deg, #ffce00, #ffce00);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Option 10: Drop Shadow and Rounded Corners */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 1.5em;
+    background-color: #ffce00;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Option 11: Minimal Border with Hover Transition */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: #ffce00;
+    font-size: 1.5em;
+    border: 1px solid #ffce00;
+    background-color: transparent;
+    transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+.feature-box h3:hover {
+    color: #fff;
+    border-color: #ffce00;
+    background-color: #ffce00;
+}
+
+/* Option 12: Neon Glow Effect */
+.feature-box h3 {
+    margin-bottom: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.6em;
+    background-color: #ffce00;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.8);
+}
+
+
+/* Paragraph Styling */
+.feature-box p {
+    color: #ccc;
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+}
+
+/* Hover Effects */
+.feature-box:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    background-color: #2a2c2e;
+    border: 1px solid #ffce00;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #features {
+        padding: 50px 10px;
+    }
+
+    .features-grid {
+        gap: 20px;
+    }
+
+    .feature-box {
+        padding: 20px;
+    }
+
+    #features h2 {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* Developer Section */
+#developers {
+    background-color: #2f3136;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Ensure anchor tags do not affect layout */
+.dev-link {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
+}
+
+.dev-link h4 {
+    margin: 0; /* Remove default margin from h4 */
+    padding: 10px 0; /* Add padding if needed */
+    color: #ffce00; /* Color for h4 */
+    font-weight: bold; /* Font weight for h4 */
+    position: relative; /* Required for ::before to position correctly */
+}
+
+/* Underline effect for h4 on hover */
+.dev-link h4::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #D69E2E;
+    transition: width 0.3s ease;
+}
+
+.dev-link h4:hover::after {
+    width: 100%;
+}
+
+
+/* Developer Box Styling */
+.dev-box {
+    position: relative;
+    text-align: center;
+    max-width: 200px;
+}
+
+/* Dev Box Container */
+.dev-container {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    flex-wrap: wrap;
+}
+
+/* Dev Box Image Styling */
+.dev-box img {
+    border-radius: 10%;
+    width: 220px;
+    height: 220px;
+    border: 3px solid #ffce00;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.dev-box img:hover {
+    transform: scale(1.1);
+}
+
+/* Dev Box Description Styling */
+.dev-box p {
+    color: #bbb;
+    margin-bottom: 5px;
+}
+
+/* Consistent Styling for Heading 4 */
+.dev-box h4 {
+    color: #ffce00;
+    font-weight: bold;
+    font-size: 1.4em;
+    position: relative; /* Required for ::before to position correctly */
+    margin-bottom: 20px;
+    padding: 10px 0; /* Added padding for consistency */
+}
+
+.dev-box h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #D69E2E;
+    transition: width 0.3s ease;
+}
+
+.dev-box h4:hover::before {
+    width: 100%;
+}
+
+/* Consistent Styling for Heading 3 */
+.dev-box h3 {
+    color: #ffce00;
+    font-weight: bold;
+    font-size: 1.4em; /* Match font size of h4 */
+    position: relative; /* Required for ::after to position correctly */
+    margin-bottom: 20px;
+    padding: 10px 0; /* Added padding for consistency */
+}
+
+.dev-box h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #D69E2E;
+    transition: width 0.3s ease;
+}
+
+.dev-box h3:hover::after {
+    width: 100%;
+}
+
+
+/* FAQ Section */
+#faq {
+    background-color: #1c1c1e;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background-color: #202225;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.faq-item:hover {
+    background-color: #292b2f;
+}
+
+.faq-item h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffce00;
+}
+
+.footer {
+    background-color: #23272a;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.footer-section h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #ffce00;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #ffce00;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin: 8px 0;
+    transition: all 0.4s ease;
+    font-size: 1em;
+}
+
+.footer-link:hover {
+    color: #ffce00;
+    transform: scale(1.1);
+}
+
+/* Footer Container */
+.footer-credits {
+    text-align: center; /* Center the text */
+    margin: 20px 0; /* Add some vertical spacing */
+    font-family: 'Tahoma', sans-serif; /* Use a clean, modern font */
+    font-size: 15px; /* Set a readable font size */
+    color: #929292; /* Dark text color */
+    padding: 15px 0; /* Add padding around the text */
+    border-top: 2px solid #ffce00; /* Light top border */
+    position: relative; /* Position for pseudo-elements */
+    overflow: hidden; /* Ensure no overflow from animations */
+}
+
+/* Link Styling */
+.footer-link1 {
+    color: #ffffff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold font for emphasis */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+    position: relative; /* Position for pseudo-elements */
+}
+
+/* Hover Effect for Link */
+.footer-link1:hover {
+    color: #ffce00; /* Darker color on hover */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for glow effect */
+}
+
+/* Animation Effect */
+.footer-credits::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffce00; /* Accent color for the line */
+    transform: translateX(-50%);
+    animation: animate-line 1s ease-in-out forwards;
+}
+
+/* Keyframes for Animation */
+@keyframes animate-line {
+    0% {
+        transform: translateX(-50%) scaleX(0);
+    }
+    100% {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+
+.footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid #999;
+    padding-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Animations */
+.footer-section {
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.2s; }
+.footer-section:nth-child(2) { animation-delay: 0.4s; }
+.footer-section:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bot-profile img {
+    animation: fadeInUp 1s ease-out;
+}
+
+.feature-box, .command-box, .dev-box img {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Additional Styling for Inputs, Forms */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ffce00;
+    border-radius: 5px;
+    background-color: #202225;
+    color: #f0f0f0;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ffc107;
+    box-shadow: 0 0 5px #ffc107;
+}
+
+/* Buttons Styling */
+button.primary-btn {
+    background-color: #ffce00;
+    color: #202225;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+button.primary-btn:hover {
+    background-color: #ffc107;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Modal Box */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #2f3136;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal h2 {
+    color: #ffce00;
+    margin-bottom: 20px;
+}
+
+.modal p {
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: #ffce00;
+    color: #202225;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #202225;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffce00;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffc107;
+}
+
+/* Hover and Focus Styles */
+button:focus, a:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ffce00;
+}
+
+button:hover {
+    background-color: #ffc107;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+}
+
+input:hover, textarea:hover {
+    border-color: #ffc107;
+}
+
+/* Fade-up animation */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
